@@ -187,17 +187,7 @@ function Quad:Destroy()
     self:Remove()
 end
 
-local OldDrawingnew = clonefunction(Drawing.new)
-
-getfenv(1).Drawing.new = function(Element)
-	if Element == "Quad" then
-		return Quad.new()
-	end
-
-	return OldDrawingnew(Element)
-end
-
-return Quad
+return Quad.new
 
 -- Made by Exunys, forked from liam0999
 -- This exists only because modern day exploits have terrible drawing libraries, solara being one of them. Their quad render object is chaotic, nothing works.
